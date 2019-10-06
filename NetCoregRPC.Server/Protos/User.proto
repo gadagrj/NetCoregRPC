@@ -1,0 +1,22 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "NetCoregRPC.Server";
+
+package User;
+
+// The greeting service definition.
+service Users {
+  // Sends a greeting
+  rpc GetAllUser (SearchRequest) returns (stream Response);
+}
+
+// The request message containing the user's name.
+message SearchRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message Response {
+ string name = 1;
+ int32 id=2;
+}
